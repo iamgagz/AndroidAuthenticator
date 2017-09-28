@@ -31,7 +31,7 @@ class MainActivity : AppCompatActivity() {
         val clear = SessionStore()
         clear.clearEmail(this)
         startActivity<LoginActivity>()
-        Toast.makeText(applicationContext, "Logout Successful!", Toast.LENGTH_LONG).show()
+        toast("Logout Successful!")
         finish()
     }
 
@@ -40,7 +40,7 @@ class MainActivity : AppCompatActivity() {
         if (TIME_LIMIT + backPressed > System.currentTimeMillis()) {
             super.onBackPressed()
         } else {
-            Toast.makeText(applicationContext, "Press back again to exit", Toast.LENGTH_LONG).show()
+            toast("Press back again to exit")
         }
         backPressed = System.currentTimeMillis()
     }
