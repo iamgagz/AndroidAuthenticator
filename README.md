@@ -1,2 +1,0 @@
-# AndroidAuthenticator
-Bootcamp Exercise.

@@ -31,7 +31,7 @@ class LoginActivity : AppCompatActivity() {
 
         if (email.isEmpty() || password.isEmpty()) {
 
-            alert("Complete the following", "Error") {
+            alert("Complete the following!", "Error") {
                 okButton { return@okButton }
             }.show()
         } else if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
@@ -39,12 +39,12 @@ class LoginActivity : AppCompatActivity() {
             alert("Email not valid", "Error") {
                 okButton { return@okButton }
             }.show()
-        } else if (email.equals("gagz_2017@mail.com") && password.equals("kotlin123")) {
+        } else if (email.equals("gagz_2017@mail.com") && password.equals("kt123")) {
 
             startActivity<MainActivity>()
             val store = SessionStore()
             store.saveEmail(email, this)
-            Toast.makeText(applicationContext, "Login Successful", Toast.LENGTH_LONG).show()
+            Toast.makeText(applicationContext, "Login Successful!", Toast.LENGTH_LONG).show()
             finish()
         } else {
 

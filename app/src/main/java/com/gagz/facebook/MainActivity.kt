@@ -8,6 +8,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 import org.jetbrains.anko.sdk25.coroutines.onClick
 import org.jetbrains.anko.startActivity
 
+
 class MainActivity : AppCompatActivity() {
 
     private val TIME_LIMIT = 1500
@@ -16,6 +17,8 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        emailView.setText(SessionStore().restoreEmail(this))
 
         btnLogout.onClick {
 
@@ -28,7 +31,7 @@ class MainActivity : AppCompatActivity() {
         val clear = SessionStore()
         clear.clearEmail(this)
         startActivity<LoginActivity>()
-        Toast.makeText(applicationContext, "Logout Successful", Toast.LENGTH_LONG).show()
+        Toast.makeText(applicationContext, "Logout Successful!", Toast.LENGTH_LONG).show()
         finish()
     }
 
