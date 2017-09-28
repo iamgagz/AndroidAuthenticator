@@ -44,7 +44,7 @@ class LoginActivity : AppCompatActivity() {
             startActivity<MainActivity>()
             val store = SessionStore()
             store.saveEmail(email, this)
-            Toast.makeText(applicationContext, "Login Successful!", Toast.LENGTH_LONG).show()
+            toast("Login Successful!")
             finish()
         } else {
 
